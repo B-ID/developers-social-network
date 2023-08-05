@@ -34,7 +34,7 @@ const Footer: FC = (props) => {
           />
 
           <p className="max-w-xs mt-5 text-sm font-normal text-start">
-            Dev-Social is the world's leading community for creatives to share ,
+            Dev-Social is the world&apos;s leading community for creatives to share ,
             grow and get hired
           </p>
         </div>

@@ -12,8 +12,8 @@ const FooterColumn: FC<FooterColumnProps> = ({ title, links }) => (
   <div className="footer_column">
     <h4 className="font-semibold">{title}</h4>
     <ul className="flex flex-col gap-2 font-normal ">
-      {links.map((link) => (
-        <Link className="transition hover:text-gray hover:underline" href="/">
+      {links.map((link, i) => (
+        <Link key={`link/${i}`} className="transition hover:text-gray hover:underline" href="/">
           {link}
         </Link>
       ))}

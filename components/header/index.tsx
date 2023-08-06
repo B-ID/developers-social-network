@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 import AuthProviders from "../auth-providers";
+import { getCurrentUser } from "@/lib/session";
 
 type Props = {};
 
-const Header: FC<Props> = (props) => {
-  const session = {};
+const Header: FC<Props> = async (props) => {
+  const session = await getCurrentUser();
+  console.log(session)
+
   return (
     <nav className="flexBetween navbar">
       <div className="flex-1 gap-10 flexStart">
@@ -23,7 +26,7 @@ const Header: FC<Props> = (props) => {
         </ul>
       </div>
       <div className="gap-4 flexCenter">
-        {session ? (
+        {session?.user ? (
           <>
             user Photo
             <Link href="/create-project">share work</Link>

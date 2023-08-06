@@ -1,11 +1,20 @@
-import React, {FC} from 'react'
+"use client";
 
-type Props = {}
+import React, { FC, useState, useEffect, Provider } from "react";
+import { getProviders, signIn } from "next-auth/react";
 
-const AuthProviders:FC<Props> = (props) => {
-  return (
-    <div>AuthProviders</div>
-  )
-}
+type Props = {};
 
-export default AuthProviders
+type Providers = {
+  id: string;
+  name: string;
+  type: string;
+};
+
+const AuthProviders: FC<Props> = (props) => {
+  const [providers, setProviders] = useState<Providers | null>(null);
+
+  return <div>AuthProviders</div>;
+};
+
+export default AuthProviders;

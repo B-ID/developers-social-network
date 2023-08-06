@@ -11,7 +11,7 @@ type Provider = {
   type: string;
   signinUrl: string
   callbackUrl: string
-  signinUrlParams: Record<string, string> | null 
+  signinUrlParams?: Record<string, string> | null 
 };
 
 type Providers = Record<string, Provider>
@@ -23,12 +23,11 @@ const AuthProviders: FC<Props> = (props) => {
     const fetchProviders = async () => {
       const res = await getProviders()
 
-      console.log(res?.credentials)
+      console.log(res)
 
       setProviders(res)
     }
     fetchProviders()
-
   }, [])
 
   if (providers) {
